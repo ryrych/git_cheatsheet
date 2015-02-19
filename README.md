@@ -79,3 +79,26 @@ How to display the second parent of `d921970`?
 git show d921970^2
 ```
 Note: this is only useful for merge commits, which have move than one parent.
+
+How to partially stage file?
+```
+git add -p
+```
+```
+git add --patch
+```
+
+How to partially reset files?
+```
+git reset --patch
+```
+
+How to partially checkout file?
+```
+git checkout --patch
+```
+
+How to partially stash changes?
+```
+git stash save --patch
+```
