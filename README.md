@@ -39,3 +39,7 @@ How to display all unique commits showing which side of the range each commit is
 git log --left-right master...feature
 ```
 
+How to remove remote branch?
+```
+git push origin --delete <branchName>
+```
