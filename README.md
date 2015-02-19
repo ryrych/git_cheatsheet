@@ -48,3 +48,8 @@ How to figure out the common ancestor of master and feature?
 ```
 git merge-base feature master
 ```
+
+How to prepare a release for people that don't use git?
+```
+git archive master --prefix='project/' --format=zip > `git describe master`.zip
+```
