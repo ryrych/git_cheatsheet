@@ -68,3 +68,14 @@ And 2 months ago?
 ```
 git show master@{2.months.ago}
 ```
+
+How to display the parent of a commit (e.g HEAD)?
+```
+git show HEAD^
+```
+
+How to display the second parent of `d921970`?
+```
+git show d921970^2
+```
+Note: this is only useful for merge commits, which have move than one parent.
