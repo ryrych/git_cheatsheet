@@ -58,3 +58,13 @@ How to display all branches?
 ```
 git log --branches
 ```
+
+How to display where your master branch was yesterday?
+```
+git show master@{yesterday}
+```
+
+And 2 months ago?
+```
+git show master@{2.months.ago}
+```
