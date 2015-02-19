@@ -20,3 +20,22 @@ master branch?
 git log feature --not master
 git log master..feature
 ```
+
+How to display what you're about to push to a remote?
+```
+git log origin/master..HEAD
+```
+```
+git log origin/master..
+```
+
+How to review all unique commits that `master` and `feature` have? (commits `master` and `feature` don't share)
+```
+git log master...feature
+```
+
+How to display all unique commits showing which side of the range each commit is in?
+```
+git log --left-right master...feature
+```
+
