@@ -13,3 +13,10 @@ How to commit changes?
 - commit per issue, with a useful message per commit
 - if some of the changes modify the same file, partially stage files:
   `git add --patch`
+
+How to review of all the commits that are in `feature` branch but that aren’t in your
+master branch?
+```
+git log feature --not master
+git log master..feature
+```
