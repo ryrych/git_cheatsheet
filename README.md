@@ -53,3 +53,8 @@ How to prepare a release for people that don't use git?
 ```
 git archive master --prefix='project/' --format=zip > `git describe master`.zip
 ```
+
+How to display all branches?
+```
+git log --branches
+```
