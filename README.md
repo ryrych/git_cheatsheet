@@ -43,3 +43,8 @@ How to remove remote branch?
 ```
 git push origin --delete <branchName>
 ```
+
+How to figure out the common ancestor of master and feature?
+```
+git merge-base feature master
+```
