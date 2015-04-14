@@ -102,3 +102,8 @@ How to partially stash changes?
 ```
 git stash save --patch
 ```
+
+How to push a local branch to a different remote?
+```
+git push origin my_local_branch:feature_branch
+```
