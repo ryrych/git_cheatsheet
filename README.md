@@ -107,3 +107,12 @@ How to push a local branch to a different remote?
 ```
 git push origin my_local_branch:feature_branch
 ```
+
+How to accept only one side when resolving conflicts?
+```
+git checkout --ours PATH/FILE
+git checkout --theirs PATH/FILE
+```
+
+`--ours` is the branch you're merging in, `--theirs` is the branch you're
+merging into.
