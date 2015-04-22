@@ -116,3 +116,26 @@ git checkout --theirs PATH/FILE
 
 `--ours` is the branch you're merging in, `--theirs` is the branch you're
 merging into.
+
+You have been working on featureA on 2 different machines. 2 changes were pushed
+to to origin/featureA before going home:
+
+- C1
+- C2
+
+At home you finished the feature adding one small change:
+
+- C3
+
+To make the history simple (e.g in pull requests workflow), you squashed all the
+3 commits and pushed the changes.
+
+The history diverged and you can't pull with fast forward on your 1st machine.
+To force pull you can do:
+
+```
+git checkout featureA
+git reset --hard origin/featureA
+```
+
+That's it!
