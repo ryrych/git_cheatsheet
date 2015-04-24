@@ -139,3 +139,12 @@ git reset --hard origin/featureA
 ```
 
 That's it!
+
+How to find line that was removed in the past?
+git -SinplaceSelect
+
+use case:
+ownerTaskeditor was refactored - instead of input (select2), a avatar is
+displayed. The previous params were different and are no longer availabled in
+the app. How to find out what params were needed - needed to use select with
+input in tasks overview page.
