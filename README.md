@@ -117,6 +117,21 @@ git checkout --theirs PATH/FILE
 `--ours` is the branch you're merging in, `--theirs` is the branch you're
 merging into.
 
+How not to confuse `git checkout --ours / --theirs` in rebase?
+
+```shell
+git checkout feature_foo_bar
+git rebase master
+# some conflict, accept change from `feature_foo_bar`
+git checkout --theirs some_file
+```
+
+Rebase **replays** the current branch's commits one at a time on top of the
+master. This makes `master` the "base" (*ours*) branch, and `feature_foo_bar`,
+*theirs*.
+
+[More info](http://inlehmansterms.net/2014/12/14/resolving-conflicts-in-git-with-ours-and-theirs/)
+
 You have been working on featureA on 2 different machines. 2 changes were pushed
 to to origin/featureA before going home:
 
@@ -139,3 +154,41 @@ git reset --hard origin/featureA
 ```
 
 That's it!
+
+How to display what pr you going to merge to master?
+git le origin/master --not master --merges
+
+
+How to preview previous revision of a file?
+
+```
+git show e051eff~1:app/assets/javascripts/file.js
+```
+
+Modify `~1` to get previous revisions
+
+
+How to check out file in a given revision?
+
+```
+git checkout e051eff~1 app/assets/javascripts/file.js
+```
+
+Your local branch diverged from PR. You reseted it with origin, forgetting
+about fix you didn’t push.
+
+```
+git reset --hard origin/feature_foo_bar
+```
+
+Doing the same work is a waste of time. Local history is empty.
+
+```
+git reflog feature_coffeelint@{60.minutes.ago}
+```
+
+You can look for the missing commit and cherry-pick it after:
+
+```
+git cherry-pick ff0000
+```
