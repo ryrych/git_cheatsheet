@@ -1,4 +1,22 @@
-## Branching
+# Git Cheat Sheet
+
+Personal cheat sheet. Slightly inspired by [this *Git Cheat Sheet*](https://gist.github.com/cholung/f418b3c078bbd4120318)
+
+## <a id="toc"></a>TOC
+
+* [Branching](#branching)
+* [Committing changes](#committing-changes)
+* [Comparing changes](#comparing-changes)
+* [Finding commits](#finding-commits)
+* [Formatting output](#formatting-output)
+* [Ignoring files](#ignoring-files)
+* [Restoring deleted files](#restoring-files)
+* [Solving conflicts](#solving-conflicts)
+* [Workflow](#workflow)
+* [Working directory](#working-directory)
+* [Resources I’ve found especially helpful](#resources)
+
+## <a id='branching'></a>Branching
 
 ### How to remove remote branch?
 
@@ -22,7 +40,7 @@ git log --branches
 git push origin my_local_branch:feature_branch
 ```
 
-## Committing changes
+## <a id='committing-changes'></a>Committing changes
 
 ### How to make sure that file doesn’t have bad white space?
 
@@ -42,7 +60,7 @@ git diff --check
 - Commit per issue, with a useful message per commit
 - If some of the changes modify the same file, partially stage files with `git add --patch`
 
-## Comparing changes
+## <a id='comparing-changes'></a>Comparing changes
 
 ### How to review commits from `feature` branch that aren’t merged into master?
 
@@ -112,7 +130,7 @@ git show e051eff~1:app/assets/javascripts/file.js
 
 Modify `~1` to get previous revisions
 
-## Finding commits
+## <a id='finding-commits'></a>Finding commits
 
 ### Using keywords
 
@@ -154,7 +172,7 @@ git log --oneline -S"[bash|console]" --pickaxe-regex
 
 Note: use can use [extended POSIX regular expression syntax][4].
 
-## Formatting output
+## <a id='formatting-output'></a>Formatting output
 
 How to format `reflog` as `git log`?
 
@@ -162,7 +180,7 @@ How to format `reflog` as `git log`?
 git log -g
 ```
 
-## Ignoring files
+## <a id='ignoring-files'></a>Ignoring files
 
 ### How to ignore files (applies to all contributors)?
 
@@ -182,7 +200,7 @@ echo "some-work-in-progress-file.txt" >> .git/info/exclude
 git add -A
 ```
 
-## Restoring deleted files
+## <a id='restoring-files'></a>Restoring deleted files
 
 ### Resetting to `origin/featureA`
 
@@ -228,7 +246,7 @@ You can look for the missing commit and cherry-pick it after:
 git cherry-pick ff0000
 ```
 
-## Solving conflicts
+## <a id='solving-conflicts'></a>Solving conflicts
 
 ### I didn’t solved conflicts properly. Can I re-generate conflict marks?
 
@@ -267,7 +285,7 @@ master. This makes `master` the "base" (*ours*) branch, and `feature_foo_bar`,
 
 [More info][1]
 
-## Workflow
+## <a id='workflow'></a>Workflow
 
 ### Safe usage of `git push --force` for feature branches
 
@@ -278,7 +296,7 @@ commits may get rewritten and others shouldn’t add commits to the branch. When
 those commits land into master or a shared branch we never rewrite them again.
 [thoughtbot blog][2]
 
-## Working directory
+## <a id='working-directory'></a>Working directory
 
 ### How to partially stage file?
 
@@ -325,7 +343,7 @@ git clean -i
 Note: use `git clean --dry-run` (`-n` for short) to see what’s going to be
 removed; it doesn’t actually remove anything
 
-## Resources I’ve found especially helpful
+## <a id='resources'></a>Resources I've found especially helpful
 
 - [Auto-squashing Git Commits][5]
 - [Code Archaeology With Git][6]
