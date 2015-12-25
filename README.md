@@ -1,20 +1,20 @@
 # Git Cheat Sheet
 
-Personal cheat sheet. Slightly inspired by [this *Git Cheat Sheet*](https://gist.github.com/cholung/f418b3c078bbd4120318)
+Personal cheat sheet. Slightly inspired by [this *Git Cheat Sheet*][1]
 
 ## <a id="toc"></a>TOC
 
-* [Branching](#branching)
-* [Committing changes](#committing-changes)
-* [Comparing changes](#comparing-changes)
-* [Finding commits](#finding-commits)
-* [Formatting output](#formatting-output)
-* [Ignoring files](#ignoring-files)
-* [Restoring deleted files](#restoring-files)
-* [Solving conflicts](#solving-conflicts)
-* [Workflow](#workflow)
-* [Working directory](#working-directory)
-* [Resources I’ve found especially helpful](#resources)
+* [Branching][2]
+* [Committing changes][3]
+* [Comparing changes][4]
+* [Finding commits][5]
+* [Formatting output][6]
+* [Ignoring files][7]
+* [Restoring deleted files][8]
+* [Solving conflicts][9]
+* [Workflow][10]
+* [Working directory][11]
+* [Resources I’ve found especially helpful][12]
 
 ## <a id='branching'></a>Branching
 
@@ -150,7 +150,7 @@ You can use it with other git commands like:
 git commit --fixup :/second
 ```
 
-[Source thoughtbot blog][3]
+[Source thoughtbot blog][13]
 
 ### Using pickaxe
 
@@ -170,7 +170,7 @@ git log --oneline -S re..og --pickaxe-regex
 git log --oneline -S"[bash|console]" --pickaxe-regex
 ```
 
-Note: use can use [extended POSIX regular expression syntax][4].
+Note: use can use [extended POSIX regular expression syntax][14].
 
 ## <a id='formatting-output'></a>Formatting output
 
@@ -283,7 +283,7 @@ Rebase **replays** the current branch's commits one at a time on top of the
 master. This makes `master` the "base" (*ours*) branch, and `feature_foo_bar`,
 *theirs*.
 
-[More info][1]
+[More info][15]
 
 ## <a id='workflow'></a>Workflow
 
@@ -294,7 +294,7 @@ Prefix branches with initials:
 > At thoughtbot we prefix our branches with our initials, signaling that those
 commits may get rewritten and others shouldn’t add commits to the branch. When
 those commits land into master or a shared branch we never rewrite them again.
-[thoughtbot blog][2]
+[thoughtbot blog][16]
 
 ## <a id='working-directory'></a>Working directory
 
@@ -345,23 +345,35 @@ removed; it doesn’t actually remove anything
 
 ## <a id='resources'></a>Resources I've found especially helpful
 
-- [Auto-squashing Git Commits][5]
-- [Code Archaeology With Git][6]
-- [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History][7]
-- [GitHub Cheat Sheet][8]
-- [Learn More About the History of a Line with Git Blame][9]
-- [Six cool features of the Git 2.x series][10]
-- [The git pickaxe][11]
+- [Auto-squashing Git Commits][17]
+- [Code Archaeology With Git][18]
+- [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History][19]
+- [GitHub Cheat Sheet][20]
+- [Learn More About the History of a Line with Git Blame][21]
+- [Six cool features of the Git 2.x series][22]
+- [The git pickaxe][23]
 
 
-[1]: http://inlehmansterms.net/2014/12/14/resolving-conflicts-in-git-with-ours-and-theirs/
-[2]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
-[3]: https://robots.thoughtbot.com/autosquashing-git-commits
-[4]: https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions
-[5]: https://robots.thoughtbot.com/autosquashing-git-commits
-[6]: http://jfire.io/blog/2012/03/07/code-archaeology-with-git/
-[7]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
-[8]: https://github.com/tiimgreen/github-cheat-sheet
-[9]: http://zsoltfabok.com/blog/2012/02/git-blame-line-history/
-[10]: https://developer.atlassian.com/blog/2015/10/cool-features-git-2.x/
-[11]: http://www.philandstuff.com/2014/02/09/git-pickaxe.html
+[1]: https://gist.github.com/cholung/f418b3c078bbd4120318
+[2]: #branching
+[3]: #committing-changes
+[4]: #comparing-changes
+[5]: #finding-commits
+[6]: #formatting-output
+[7]: #ignoring-files
+[8]: #restoring-files
+[9]: #solving-conflicts
+[10]: #workflow
+[11]: #working-directory
+[12]: #resources
+[13]: https://robots.thoughtbot.com/autosquashing-git-commits
+[14]: https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions
+[15]: http://inlehmansterms.net/2014/12/14/resolving-conflicts-in-git-with-ours-and-theirs/
+[16]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
+[17]: https://robots.thoughtbot.com/autosquashing-git-commits
+[18]: http://jfire.io/blog/2012/03/07/code-archaeology-with-git/
+[19]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
+[20]: https://github.com/tiimgreen/github-cheat-sheet
+[21]: http://zsoltfabok.com/blog/2012/02/git-blame-line-history/
+[22]: https://developer.atlassian.com/blog/2015/10/cool-features-git-2.x/
+[23]: http://www.philandstuff.com/2014/02/09/git-pickaxe.html
