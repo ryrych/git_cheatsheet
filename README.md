@@ -319,13 +319,29 @@ How to add files except those that match pattern defined in `.gitingore`?
 git add -A
 ```
 
+## Solving conflicts
+
+I didn’t solved conflicts properly. Can I re-generate conflict marks?
+
+```console
+git checkout --conflict=diff3 some-file
+```
+
+or
+
+```console
+git checkout --conflict=merge some-file.txt
+```
+
 ## Resources I’ve found especially helpful
 
 - [Auto-squashing Git Commits][5]
-- [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History][6]
-- [GitHub Cheat Sheet][7]
-- [Six cool features of the Git 2.x series][8]
-- [The git pickaxe][9]
+- [Code Archaeology With Git][6]
+- [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History][7]
+- [GitHub Cheat Sheet][8]
+- [Learn More About the History of a Line with Git Blame][9]
+- [Six cool features of the Git 2.x series][10]
+- [The git pickaxe][11]
 
 
 [1]: http://inlehmansterms.net/2014/12/14/resolving-conflicts-in-git-with-ours-and-theirs/
@@ -333,7 +349,9 @@ git add -A
 [3]: https://robots.thoughtbot.com/autosquashing-git-commits
 [4]: https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions
 [5]: https://robots.thoughtbot.com/autosquashing-git-commits
-[6]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
-[7]: https://github.com/tiimgreen/github-cheat-sheet
-[8]: https://developer.atlassian.com/blog/2015/10/cool-features-git-2.x/
-[9]: http://www.philandstuff.com/2014/02/09/git-pickaxe.html
+[6]: http://jfire.io/blog/2012/03/07/code-archaeology-with-git/
+[7]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
+[8]: https://github.com/tiimgreen/github-cheat-sheet
+[9]: http://zsoltfabok.com/blog/2012/02/git-blame-line-history/
+[10]: https://developer.atlassian.com/blog/2015/10/cool-features-git-2.x/
+[11]: http://www.philandstuff.com/2014/02/09/git-pickaxe.html
