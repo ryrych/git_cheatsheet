@@ -153,7 +153,7 @@ Rebase **replays** the current branch's commits one at a time on top of the
 master. This makes `master` the "base" (*ours*) branch, and `feature_foo_bar`,
 *theirs*.
 
-[More info](http://inlehmansterms.net/2014/12/14/resolving-conflicts-in-git-with-ours-and-theirs/)
+[More info][1]
 
 ## How to display what pr you going to merge to master?
 
@@ -220,3 +220,120 @@ You can look for the missing commit and cherry-pick it after:
 ```bash
 git cherry-pick ff0000
 ```
+
+## Workflow
+
+### Safe usage of `git push --force` for feature branches
+
+Prefix branches with initials:
+
+> At thoughtbot we prefix our branches with our initials, signaling that those
+commits may get rewritten and others shouldn’t add commits to the branch. When
+those commits land into master or a shared branch we never rewrite them again.
+[thoughtbot blog][2]
+
+## Finding commits
+
+### Using keywords
+
+```console
+git log :/typo
+```
+
+Finds most recent commit that contains word ‘typo’ in the commit message:
+
+```console
+47db47b playing with typography
+```
+
+You can use it with other git commands like:
+
+```console
+git commit --fixup :/second
+```
+
+[Source thoughtbot blog][3]
+
+### Using pickaxe
+
+Pickaxe finds any commit that introduced or removed the string `reflog`:
+
+```console
+git log --oneline -S reflog
+```
+
+To search by a **regex**:
+
+```console
+git log --oneline -S re..og --pickaxe-regex
+```
+
+```console
+git log --oneline -S"[bash|console]" --pickaxe-regex
+```
+
+Note: use can use [extended POSIX regular expression syntax][4].
+
+## Formatting output
+
+How to format `reflog` as `git log`?
+
+```console
+git log -g
+```
+
+## Stashing changes
+
+How to reapply changes that would cause conflicts when applied?
+
+```console
+git stash branch changes-from-stash
+```
+
+## How to clean working directory and get rid of stashed changes?
+
+```console
+git clean -i
+```
+
+Note: use `git clean --dry-run` (`-n` for short) to see what’s going to be
+removed; it doesn’t actualy remove anything
+
+## Working with working directory
+
+How to ignore files (applies to all contributors)?
+
+```console
+echo "some-file.txt" >> .gitignore
+```
+
+How to ignore personal files?
+
+```console
+echo "some-work-in-progress-file.txt" >> .git/info/exclude
+```
+
+How to add files except those that match pattern defined in `.gitingore`?
+
+```console
+git add -A
+```
+
+## Resources I’ve found especially helpful
+
+- [Auto-squashing Git Commits][5]
+- [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History][6]
+- [GitHub Cheat Sheet][7]
+- [Six cool features of the Git 2.x series][8]
+- [The git pickaxe][9]
+
+
+[1]: http://inlehmansterms.net/2014/12/14/resolving-conflicts-in-git-with-ours-and-theirs/
+[2]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
+[3]: https://robots.thoughtbot.com/autosquashing-git-commits
+[4]: https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions
+[5]: https://robots.thoughtbot.com/autosquashing-git-commits
+[6]: https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
+[7]: https://github.com/tiimgreen/github-cheat-sheet
+[8]: https://developer.atlassian.com/blog/2015/10/cool-features-git-2.x/
+[9]: http://www.philandstuff.com/2014/02/09/git-pickaxe.html
